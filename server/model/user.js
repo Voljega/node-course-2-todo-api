@@ -75,8 +75,7 @@ userSchema.methods.toJSON = function () {
   return userObject;
 }
 
-userSchema.statics.findByCredentials = async (email, password) => {
-  console.log("ouaich");
+userSchema.statics.findByCredentials = async (email, password) => {  
   const user = await User.findOne({email});
   if (!user) {
     throw new Error('Unable to login');
